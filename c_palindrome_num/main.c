@@ -1,17 +1,16 @@
 #include <stdio.h>
 
 bool is_palindrome(unsigned int n) {
-	unsigned int result, temp, remainder = 0;
-	temp = n;
+	unsigned int result, quotient, remainder = 0;
+	quotient = n;
 
-	while (temp != 0) {
-		remainder = temp % 10;
+	while (quotient != 0) {
+		remainder = quotient % 10;
 		result = result * 10 + remainder;
-		temp /= 10;
+		quotient /= 10;
 	}
 
-	if(result == n) return true;
-	else return false;
+	return result == n;
 }
 
 int main() {
